@@ -1,0 +1,45 @@
+{
+	"name": "internachi/aire-select",
+	"description": "A library-agnostic implementation of a multi-select / autocomplete field for Aire.",
+	"authors": [
+		{
+			"name": "Chris Morrell",
+			"homepage": "http://www.cmorrell.com"
+		},
+		{
+			"name": "Daniel Coulbourne",
+			"homepage": "http://coulb.com"
+		}
+	],
+	"license": "MIT",
+	"require": {
+		"glhd/aire": "^2.0"
+	},
+	"require-dev": {
+		"orchestra/testbench": "^4.0",
+		"friendsofphp/php-cs-fixer": "^2.16"
+	},
+	"autoload": {
+		"psr-4": {
+			"InterNACHI\\AireSelect\\": "src/"
+		}
+	},
+	"scripts": {
+		"test": [
+			"vendor/bin/phpunit"
+		],
+		"lint": [
+			"vendor/bin/php-cs-fixer fix --config=.php_cs.dist -v --dry-run --stop-on-violation --using-cache=no"
+		],
+		"lint-fix": [
+			"vendor/bin/php-cs-fixer fix --config=.php_cs.dist -v --using-cache=no"
+		]
+	},
+	"extra": {
+		"laravel": {
+			"providers": [
+				"InterNACHI\\AireSelect\\AireSelectServiceProvider"
+			]
+		}
+	}
+}
